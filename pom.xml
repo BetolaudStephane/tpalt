@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>TpAlt-project</groupId>
-	<artifactId>tpalt</artifactId>
+	<groupId>Tme-tpalt</groupId>
+	<artifactId>Tme-tpalt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>tpalt</name>
+	<name>Tme-tpalt</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -78,7 +78,7 @@
 	</repositories>
 
 	<build>
-		<finalName>tpalt</finalName>
+		<finalName>Tme-tpalt</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
