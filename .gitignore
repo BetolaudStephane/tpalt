@@ -1,0 +1,8 @@
+# microservice relations
+
+relations/node_modules/
+relations/yarn.lock
+relations/relations.db
+
+# Mac OS
+.DS_Store
