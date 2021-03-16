@@ -3,11 +3,12 @@
 Port: 3000
 
 ## Make migrations ##
-yarn migrate |
+>yarn migrate
 
 ## Start server ##
-yarn start |
+> yarn start
 
 ## Test with curl ##
 *Example*
-curl -X POST -H "Content-Type: application/json" -d @users_interests.json http://localhost:3000/users-interest
+
+> curl -X POST -H "Content-Type: application/json" -d @users_interests.json http://localhost:3000/users-interest
