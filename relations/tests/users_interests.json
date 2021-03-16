@@ -1,0 +1,31 @@
+[
+	{
+		"user_id": "1",
+		"interest": "ocaml"
+	},
+	{
+		"user_id": "2",
+		"interest": "python"
+	},
+	{
+		"user_id": "3",
+		"interest": "c"
+	},
+	{
+		"user_id": "3",
+		"interest": "c++"
+	},
+	{
+		"user_id": "1",
+		"interest": "javascript"
+	},
+	{
+		"user_id": "4",
+		"interest": "sql"
+	},
+	{
+		"user_id": "1",
+		"interest": "scheme"
+	}
+
+]

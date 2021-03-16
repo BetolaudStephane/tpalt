@@ -18,6 +18,22 @@ app.post('/unary-relation', (req, res) => {
 	models.postUnaryRelation(req, res);
 });
 
+app.get('/interests', (req, res) => {
+	models.getAllInterests(req, res);
+});
+
+app.get('/users-interests', (req, res) => {
+	models.getAllUsersInterests(req, res);
+});
+
+app.post('/user-interest', (req, res) => {
+	models.postUserInterest(req, res);
+});
+
+app.post('/users-interest', (req, res) => {
+	models.postUsersInterest(req, res);
+});
+
 app.listen(port, () => {
 	console.log(`Example app listening at http://localhost:${port}`);
 });
