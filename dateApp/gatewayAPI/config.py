@@ -1,0 +1,1 @@
+relationsBaseUrl = 'http://localhost:3000'

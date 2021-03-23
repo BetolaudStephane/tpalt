@@ -6,3 +6,6 @@ relations/relations.db
 
 # Mac OS
 .DS_Store
+
+# date app
+__pycache__

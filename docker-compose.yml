@@ -6,5 +6,15 @@ services:
       - '3000:3000'
     volumes:
       - logvolume01:/var/log
+  dateapp:
+    command: python3 manage.py runserver
+    build: './dateApp'
+    ports:
+      - '8000:8000'
+    volumes:
+      - logvolume02:/var/log
+    links:
+      - relations
 volumes:
   logvolume01: {}
+  logvolume02: {}
