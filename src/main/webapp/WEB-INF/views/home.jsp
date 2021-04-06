@@ -7,8 +7,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
     </head>
-    <body>
-        <h1>Hello World!</h1>
-        <p>This is the homepage!</p>
+    <body  style="background-color: rgb(89,126,170);">
+   	<div style="text-align: center;">
+       <h1>Inscription</h1>
+    </div>
+       
+    <div>
+	    <form action="inscription.htm" method="POST" > 
+			<input type="text" id="name" name="name" placeholder="Nom">
+			<input type="text" id="lastName" name="lastName" placeholder="Last name">
+			<input type="text" id="email" name="email" placeholder="email">
+			<input type="text" id="password" name="password" placeholder="password">
+			
+			<input type="submit">
+			
+		</form>
+    </div>
+   
+    
     </body>
 </html>

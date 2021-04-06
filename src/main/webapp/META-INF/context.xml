@@ -1,0 +1,8 @@
+ 
+ 	<Context docBase="pmsdiag" path="/pmsdiag" reloadable="true" source="org.eclipse.jst.j2ee.server:pmsdiag">
+       		<Resource auth="Container" description="DB Connection" driverClass="com.mysql.cj.jdbc.Driver" 
+			maxPoolSize="4" minPoolSize="2" acquireIncrement="1" name="jdbc/TPALT" user="root" 
+			password="password" factory="org.apache.naming.factory.BeanFactory" 
+			type="com.mchange.v2.c3p0.ComboPooledDataSource" 
+			jdbcUrl="jdbc:mysql://localhost:3306/tpalt?autoReconnectForPools=true" />
+       </Context>
