@@ -11,3 +11,8 @@ relations/relations.db
 __pycache__
 /target/
 /bin/
+
+# eclipse
+.classpath
+.project
+.settings/
