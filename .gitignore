@@ -9,3 +9,5 @@ relations/relations.db
 
 # date app
 __pycache__
+/target/
+/bin/
