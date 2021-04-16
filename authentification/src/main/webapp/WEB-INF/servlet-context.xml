@@ -58,8 +58,8 @@ http://www.springframework.org/schema/jee/spring-jee-3.1.xsd">
 	</bean>
 
 
-	<bean id="utilisateurManager" class="manager.UtilisateurManager"></bean>
-	<bean id="utilisateurDAO" class="dao.UtilisateurDAO"></bean>
+	<bean id="utilisateurManager" class="src.main.java.manager.UtilisateurManager"></bean>
+	<bean id="utilisateurDAO" class="src.main.java.dao.UtilisateurDAO"></bean>
 </beans>
 	
 	
