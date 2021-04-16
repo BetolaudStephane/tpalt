@@ -28,14 +28,6 @@ const getAllInterests = (req, res) => {
 	});
 };
 
-const insertInterest = (interest) => {
-	var stmt = db.prepare('INSERT INTO interests(name) VALUES ($name)', {
-		$name: interest,
-	});
-	stmt.run();
-	stmt.finalize();
-};
-
 /* users interests */
 
 const getAllUsersInterests = (req, res) => {
@@ -69,20 +61,28 @@ const findAndInsertUserInterest = (user_interest) => {
 				console.error(err.message);
 			}
 			if (!interest_id) {
-				insertInterest(user_interest.interest);
-				db.get(
-					'SELECT id FROM interests WHERE name=$name',
+				db.run(
+					'INSERT INTO interests(name) VALUES ($name)',
 					{
 						$name: user_interest.interest,
 					},
-					(err, row) => {
+					(err) => {
 						if (err) console.error(err.message);
-						if (!row)
-							console.error(
-								'Oups ! Something went wrong when inserting interest: ' +
-									user_interest.interest
-							);
-						insertUserInterest(user_interest.user_id, interest_id);
+						db.get(
+							'SELECT id FROM interests WHERE name=$name',
+							{
+								$name: user_interest.interest,
+							},
+							(err, row) => {
+								if (err) console.error(err.message);
+								if (!row)
+									console.error(
+										'Oups ! Something went wrong when inserting interest: ' +
+											user_interest.interest
+									);
+								insertUserInterest(user_interest.user_id, row);
+							}
+						);
 					}
 				);
 			} else {
@@ -92,16 +92,26 @@ const findAndInsertUserInterest = (user_interest) => {
 	);
 };
 
-const postUserInterest = (req, res) => {
+const postUserInterests = (req, res) => {
 	const user_interest = req.body;
-	findAndInsertUserInterest(user_interest);
+	user_interest.interests.map((interest) => {
+		findAndInsertUserInterest({
+			user_id: user_interest.user_id,
+			interest: interest,
+		});
+	});
 	res.sendStatus(200);
 };
 
-const postUsersInterest = (req, res) => {
+const postUsersInterests = (req, res) => {
 	const users_interest = req.body;
 	users_interest.map((user_interest) => {
-		findAndInsertUserInterest(user_interest);
+		user_interest.interests.map((interest) => {
+			findAndInsertUserInterest({
+				user_id: user_interest.user_id,
+				interest: interest,
+			});
+		});
 	});
 	res.sendStatus(200);
 };
@@ -111,6 +121,6 @@ module.exports = {
 	postUnaryRelation,
 	getAllInterests,
 	getAllUsersInterests,
-	postUserInterest,
-	postUsersInterest,
+	postUserInterests,
+	postUsersInterests,
 };

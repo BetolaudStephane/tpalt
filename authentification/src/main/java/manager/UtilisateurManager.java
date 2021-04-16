@@ -11,20 +11,20 @@ import dao.UtilisateurDAO;
 import objects.Utilisateur;
 
 public class UtilisateurManager {
-	
+
 	@Autowired
 	UtilisateurDAO utilisateurDAO;
-	
+
 	public Utilisateur getUtilisateurById(String id) {
-		
+
 		return utilisateurDAO.getUtilisateurById(id);
 	}
-	
+
 	public List<Utilisateur> getListeUtilisateur(){
 		return utilisateurDAO.getListeUtilisateur();
 	}
 
-	
+
 	public void creer(String name, String lastName, String email, String password) {
 			System.out.println("coucou du manager");
 		Utilisateur utilisateur = new Utilisateur();
@@ -32,21 +32,21 @@ public class UtilisateurManager {
 		utilisateur.setLastName(lastName);
 		utilisateur.setName(lastName);
 		utilisateur.setPassword(password);
-		
+
 		 utilisateurDAO.save(utilisateur);
 	}
-	
+
 	public Utilisateur modifier(String id, String name, String lastName, String email, String password) {
-		
+
 		Utilisateur utilisateur = getUtilisateurById(id);
 		utilisateur.setEmail(email);
 		utilisateur.setLastName(lastName);
 		utilisateur.setName(lastName);
 		utilisateur.setPassword(password);
-		
+
 		 utilisateurDAO.update(utilisateur);
-		
+
 		return utilisateur;
 	}
-	
+
 }

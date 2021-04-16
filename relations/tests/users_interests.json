@@ -1,31 +1,31 @@
 [
 	{
 		"user_id": "1",
-		"interest": "ocaml"
+		"interests": ["ocaml"]
 	},
 	{
 		"user_id": "2",
-		"interest": "python"
+		"interests": ["python"]
 	},
 	{
 		"user_id": "3",
-		"interest": "c"
+		"interests": ["c", "c#"]
 	},
 	{
 		"user_id": "3",
-		"interest": "c++"
+		"interests": ["c++"]
 	},
 	{
 		"user_id": "1",
-		"interest": "javascript"
+		"interests": ["javascript"]
 	},
 	{
 		"user_id": "4",
-		"interest": "sql"
+		"interests": ["sql"]
 	},
 	{
 		"user_id": "1",
-		"interest": "scheme"
+		"interests": ["scheme"]
 	}
 
 ]

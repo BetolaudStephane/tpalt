@@ -26,12 +26,12 @@ app.get('/users-interests', (req, res) => {
 	models.getAllUsersInterests(req, res);
 });
 
-app.post('/user-interest', (req, res) => {
-	models.postUserInterest(req, res);
+app.post('/user-interests', (req, res) => {
+	models.postUserInterests(req, res);
 });
 
-app.post('/users-interest', (req, res) => {
-	models.postUsersInterest(req, res);
+app.post('/users-interests', (req, res) => {
+	models.postUsersInterests(req, res);
 });
 
 app.listen(port, () => {

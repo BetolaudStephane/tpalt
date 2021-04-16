@@ -28,25 +28,25 @@ import objects.Utilisateur;
 public class ConnexionController {
 	@Autowired
 	UtilisateurManager utilisateurManager;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public String formBackingObject(ModelMap model, HttpServletRequest request) {
-		
+
 		return "connexion";
 	}
-	
+
 	@RequestMapping(method = RequestMethod.POST)
 	public Map<String, String>  onSubmit(@ModelAttribute("command") @Validated ConnexionForm connexionForm,
 			BindingResult bindingResult, HttpServletRequest request, ModelMap model) {
-		
+
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		System.out.println(email);
 		System.out.println(password);
 		Map<String, String> retour = new HashMap<String, String>();
-		
+
 		List<Utilisateur> listeUtilisateur = utilisateurManager.getListeUtilisateur();
-		
+
 		for(Utilisateur user : listeUtilisateur) {
 			if(user.getEmail().equals(email) && user.getPassword().equals(password)) {
 				retour.put("id", user.getId().toString());
@@ -54,13 +54,13 @@ public class ConnexionController {
 				retour.put("password", user.getPassword());
 			}
 		}
-		
+
 		return retour;
-		
-		
+
+
 	}
-	
-	
-	
-	
+
+
+
+
 }
